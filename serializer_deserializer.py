@@ -47,6 +47,9 @@ class DeSerializer:
             for obj in serializers.deserialize("json", data):
                 if not model_class.objects.filter(id=obj.object.pk):
                     fields = self.fields_included(model_class, model['excluded_fields'])
-                    
-                    if not model_class.objects.filter(id=field[vowels.index('id')]):
-                        model_class.objects.create()
+                    in_create_dic = {}
+                    for field in fields:
+                        in_create_dic.update({field: getattr(obj.object, field)})
+
+                    #model_class.objects.create(**in_create_dic)
+                   

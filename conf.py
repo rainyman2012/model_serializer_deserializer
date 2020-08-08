@@ -8,6 +8,9 @@ models_to_dump = [
             'cuserid',
             'cdate',
             'version',
+        ],
+        'many_to_many_fields':[
+            'disease_group_list'
         ]
     }
 ]
