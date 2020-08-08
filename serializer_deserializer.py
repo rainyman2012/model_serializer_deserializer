@@ -1,14 +1,6 @@
-from health.models import *                                                                                                                       
-from beasy.models import *                                                                                                                        
-from web_service.models import *
-from datetime import date, timedelta
-from django.db.models import Q
+from django.db import models
 from django.core import serializers
-import imp
-import json
-import conf
 from django.apps import apps
-from django.forms.models import model_to_dict
 
 class Serializer:
     def __init__(self, saved_dir=None, models=None):
